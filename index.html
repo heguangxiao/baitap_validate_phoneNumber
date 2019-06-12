@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkPhoneNumber(number) {
+        regexp = /^(\()[_0-9]{2}(\))(\-)(\()[_0]{1}[_0-9]{9}(\))$/;
+        if (regexp.test(number)){
+            return true;
+        }
+        return false;
+    }
+
+    let numberPhone = ['(84)-(0978489648)', '84-0978489648' , '(84)-0978489648', '84-(0978489648)', '(a8)-(0978489648)'];
+    numberPhone.push('(84)-(9978489648)');
+    numberPhone.push('(84)-(097ds489648)');
+    numberPhone.push('(84)-(0978489648');
+
+    for(i=0;i<numberPhone.length;i++){
+        document.writeln(numberPhone[i] +' == '+ checkPhoneNumber(numberPhone[i]) + '<br/>');
+    }
+</script>
+</body>
+</html>
